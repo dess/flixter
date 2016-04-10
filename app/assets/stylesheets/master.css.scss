@@ -4,6 +4,7 @@
   font-weight: 200;
   box-shadow: 0px 1px 3px #2a2a2a;
   background:url('subtle_carbon.png');
+  color:white;
 }
 
 .navbar-inverse a.navbar-brand {
@@ -34,12 +35,14 @@ h1, h2, h3, h4, h5, h6, .navbar {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 100;
   text-shadow: rgba(0,0,0,0.95) 1px 1px;
+  color:white;
 }
 
 .frosty h2 {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 200;
   text-shadow: rgba(0,0,0,0.95) 1px 1px;
+  color:white;
 }
 
 .btn {
@@ -49,4 +52,14 @@ h1, h2, h3, h4, h5, h6, .navbar {
 body {
   background: url('footer_lodyas.png');
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  color:black;
+}
+
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
 }
