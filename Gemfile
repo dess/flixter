@@ -9,6 +9,7 @@ gem 'simple_form'
 gem 'figaro'
 gem "fog", "~> 1.3.1"
 gem 'carrierwave'
+gem 'carrierwave-aws'
 
 gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
