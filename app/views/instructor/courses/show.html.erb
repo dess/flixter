@@ -16,7 +16,7 @@
         <%= image_tag current_course.image, class: 'img-responsive' %>
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'pull-right btn btn-primary btn-xs' %>
         <ul>
-          <% section.lessons.each do |lesson| %>
+          <% section.lessons.rank(:row_order).each do |lesson| %>
             <li>
               <b><%= lesson.title %></b>
               -
