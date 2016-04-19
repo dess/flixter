@@ -9,9 +9,9 @@
     <%= link_to 'Add a new section...', new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
   </div>
 
-  <ul>
-    <% current_course.sections.each do |section| %>
-      <li>
+  <ul class="sections">
+    <% current_course.sections.rank(:row_order).each do |section| %>
+      <li data-update-url="<%= instructor_section_path(section) %>">
         <%= section.title %>
         <%= image_tag current_course.image, class: 'img-responsive' %>
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'pull-right btn btn-primary btn-xs' %>
@@ -43,6 +43,18 @@
         });
       }
     });
+
+    $('.sections').sortable({
+      update: function( event, ui ) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { section: { row_order_position: ui.item.index() } }
+        });
+      }
+    });
+
   });
 </script>
 
