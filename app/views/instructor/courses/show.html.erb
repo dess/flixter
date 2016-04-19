@@ -17,7 +17,7 @@
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'pull-right btn btn-primary btn-xs' %>
         <ul class="lessons">
           <% section.lessons.rank(:row_order).each do |lesson| %>
-            <li data-item-id=<%= lesson.id %>>
+            <li data-update-url="<%= instructor_lesson_path(lesson) %>">
               <b><%= lesson.title %></b>
               -
               <%= lesson.subtitle %>
@@ -35,7 +35,12 @@
   $(function() {
     $('.lessons').sortable({
       update: function( event, ui ) {
-          alert("LessonId: " + ui.item.data('item-id') + " Index: " + ui.item.index());
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { lesson: { row_order_position: ui.item.index() } }
+        });
       }
     });
   });
