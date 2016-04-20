@@ -37,6 +37,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
             <% if user_signed_in? %>
+              <li><%= link_to 'My Dashboard', dashboard_path %></li>
               <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to 'Sign in', new_user_session_path %></li>
